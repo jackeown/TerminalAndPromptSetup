@@ -1,0 +1,52 @@
+# Ghostty configuration — portable snapshot
+
+# Static background
+background-image = @BACKGROUND@
+background-image-fit = cover
+background-image-position = center
+
+# Text colors tuned for the dark gradient background
+# (commented out so the theme below controls them; uncomment to force your own)
+# background = 0d1b3a
+# foreground = cdd6f4
+# cursor-color = f5e0dc
+# selection-background = 45475a
+# selection-foreground = cdd6f4
+
+# Font
+font-family = Hack
+font-size = 12
+
+# Window
+window-padding-x = 12
+window-padding-y = 10
+window-decoration = true
+
+# Slight transparency (1 = opaque, 0 = fully see-through)
+background-opacity = 0.69
+# Make cells that paint their own background (backdrop-shell, tmux, nvim) respect it too
+background-opacity-cells = true
+
+# Always launch zsh (ignore the stale $SHELL=/usr/bin/fish from the session)
+command = @ZSH@
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+
+# Tabs
+# New tabs (ctrl+shift+t) open in the same directory as the current tab.
+# (default true in 1.3.1, set explicitly for clarity; needs working shell integration)
+tab-inherit-working-directory = true
+# Add this alongside your other settings (change to zsh or bash if needed)
+shell-integration = zsh
+
+
+
+# Keybinds
+# Toggle window between your background-opacity and fully opaque (for A/B testing)
+keybind = ctrl+shift+u=toggle_background_opacity
+
+theme = Apple System Colors
+
+keybind = ctrl+shift+t=new_tab
